@@ -7,10 +7,10 @@ import React from 'react'
 //     type : ""
 
 function ListForm(props){
-    const { listingForm, changeHandler } = props
+    const { listingForm, submitDisabled, changeHandler, submitHandler } = props
 
     return(
-         <form>
+         <form onSubmit={submitHandler}>
              <label htmlFor="location">Location 
                  <input 
                     id="location"
@@ -56,6 +56,7 @@ function ListForm(props){
                     onChange={changeHandler}
                     />
              </label>
+             <button disabled={submitDisabled} type="submit">Submit</button>
          </form>
     )
 }
