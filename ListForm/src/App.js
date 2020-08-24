@@ -37,7 +37,8 @@ function App() {
   
   //handles submit to an array for now. can replace with a Post call
   function submitHandler(e){
-    const tempListings = [...listings]
+    e.preventDefault()
+    let tempListings = [...listings]
     tempListings = [...tempListings, listingForm]
     setListings(tempListings)
     setListingForm(initialFormValues)

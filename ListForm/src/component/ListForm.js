@@ -1,11 +1,5 @@
 import React from 'react'
 
-// location : "",
-//     lengthStay : "",
-//     bedrooms : "",
-//     bathrooms : "",
-//     type : ""
-
 function ListForm(props){
     const { listingForm, submitDisabled, changeHandler, submitHandler } = props
 
