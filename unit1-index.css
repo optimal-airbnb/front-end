@@ -1,0 +1,139 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* Meyers Reset Above */
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+}
+
+nav{
+    font-size: 2rem;
+    display: flex;
+    list-style-type: none;
+    margin: 3%;
+    text-align: center;
+    justify-content: center;
+}
+
+.nav-top{
+    display: flex;
+    margin: 0.5%;
+    border-bottom: 1px solid gray;
+    margin-bottom: 1%;
+}
+.nav-left{
+    justify-content: flex-start;
+}
+
+.nav{
+    background-color: #DC143C;
+    border: 1px solid white;
+    color: white;
+    padding: 5px;
+}
+
+.nav-1{
+    background-color: #E9967A;
+}
+
+.nav:hover{
+    background-color: white;
+    color: #DC143C;
+    transition: 1s;
+}
+
+.nav-1:hover{
+    background-color: white;
+    color: #E9967A;
+    transition: 1s;
+}
+
+h1{
+    font-size: 5rem;
+    text-align: center;
+    margin: 4% 0;
+}
+
+.left{
+    display: flex;
+    width: 30%;
+    margin: 1%
+}
+
+.img-1{
+    width: 100%;
+    height: 50vh;
+    border-radius: 2%;
+}
+
+.right{
+    display: flex;
+    font-size: 1.6rem;
+    margin: 1%;
+    width: 40%;
+    flex-flow: column;
+}
+
+h2{
+    font-size: 4rem;
+    margin-bottom: 1%;
+    color: #E9967A;
+}
+
+.h2-container{
+    margin: 1%;
+    padding: 30px;
+    width: 100%;
+}
+
+.container-1{
+    display: flex;
+    margin: 5%;
+    justify-content: center;
+}
+
+.button-1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.button-1 button{
+    background-color: #DC143C;
+    color: white;
+    font-size: 20px;
+    border-radius: 5%;
+    padding: 15px;
+    border: none;
+}
+
+.button-1 button:hover{
+    background-color: white;
+    color: #DC143C;
+    transition: 1s;
+    border: none;
+}
+
+@media (max-width: 500px){
+
+}
