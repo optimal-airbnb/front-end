@@ -78,7 +78,7 @@ function App() {
   
   return (
     <>
-      <h2>Listing Information</h2>
+      <h2>Rental Price Calculator</h2>
       <ListForm listingForm={listingForm} 
                 submitDisabled={submitDisabled} 
                 listings = {listings}
