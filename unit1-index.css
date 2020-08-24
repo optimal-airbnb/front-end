@@ -100,12 +100,6 @@ h2{
     color: #E9967A;
 }
 
-.h2-container{
-    margin: 1%;
-    padding: 30px;
-    width: 100%;
-}
-
 .container-1{
     display: flex;
     margin: 5%;
@@ -135,5 +129,36 @@ h2{
 }
 
 @media (max-width: 500px){
-
+    .nav-top{
+        display: flex;
+        justify-content: center;
+    }
+    .container-1{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+    .left{
+        width: 80%;
+        margin: 0 auto;
+        align-items: center;
+    }
+   
+    .right{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    h2{
+        width: 100%;
+        margin-top: 2%;
+    }
+    .right p{
+        margin: 5% auto;
+    }
+    .button-1{
+        margin: 3% auto;
+    }
 }
