@@ -18,6 +18,13 @@ const initialFormValues={
     bathrooms : "",
     type : ""
 }
+const initialErrorValues={
+    location : "",
+    lengthStay : "",
+    bedrooms : "",
+    bathrooms : "",
+    type : ""
+}
 
 function App() {
   //contains array of listing objects
@@ -25,7 +32,7 @@ function App() {
   //contains listing form object
   const [ listingForm, setListingForm] = useState(initialFormValues)
   //Error messages failing yup schema
-  const[ errorState, setErrorState ] = useState(initialFormValues)
+  const[ errorState, setErrorState ] = useState(initialErrorValues)
   //sumbit button is turned off until form is validated
   const[ submitDisabled, setSubmitDisabled ] = useState(true)
   
@@ -43,7 +50,7 @@ function App() {
     tempListings = [...tempListings, listingForm]
     setListings(tempListings)
     setListingForm(initialFormValues)
-    setErrorState(initialFormValues)
+    setErrorState(initialErrorValues)
   }
   
   //checks input with yup
