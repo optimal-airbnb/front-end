@@ -14,8 +14,8 @@ const formSchema = yup.object().shape({
 const initialFormValues={
     location : "",
     lengthStay : "",
-    bedrooms : "",
-    bathrooms : "",
+    bedrooms : "1",
+    bathrooms : "1",
     type : ""
 }
 const initialErrorValues={
@@ -77,15 +77,21 @@ function App() {
 
   
   return (
-    <>
-      <h2>Rental Price Calculator</h2>
-      <ListForm listingForm={listingForm} 
+    <div className="container">
+        <div className="app-container">
+          <div className="header-container">
+            <h2>Rental Price Calculator</h2>
+         
+           </div>
+             <ListForm listingForm={listingForm} 
                 submitDisabled={submitDisabled} 
                 listings = {listings}
                 errorState = {errorState}
                 changeHandler={changeHandler} 
                 submitHandler={submitHandler}/>
-    </>
+        </div>
+    </div>
+   
   );
 }
 
