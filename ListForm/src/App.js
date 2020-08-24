@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ListForm from './component/ListForm'
 import * as yup from 'yup'
+import './App.css'
 
 const formSchema = yup.object().shape({
   location: yup.string().required("Location is a required field"),
@@ -35,7 +36,7 @@ function App() {
     setListingForm({...listingForm, [e.target.name] : e.target.value})
   }
   
-  //handles submit to an array for now. can replace with a Post call
+  //handles submit to an array for now
   function submitHandler(e){
     e.preventDefault()
     let tempListings = [...listings]
@@ -70,8 +71,11 @@ function App() {
   
   return (
     <>
+      <h2>Listing Information</h2>
       <ListForm listingForm={listingForm} 
                 submitDisabled={submitDisabled} 
+                listings = {listings}
+                errorState = {errorState}
                 changeHandler={changeHandler} 
                 submitHandler={submitHandler}/>
     </>

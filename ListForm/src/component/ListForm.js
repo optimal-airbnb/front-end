@@ -1,7 +1,8 @@
 import React from 'react'
+import './ListForm.css'
 
 function ListForm(props){
-    const { listingForm, submitDisabled, changeHandler, submitHandler } = props
+    const { listingForm, submitDisabled, listings, errorState, changeHandler, submitHandler } = props
 
     return(
          <form onSubmit={submitHandler}>
@@ -13,6 +14,9 @@ function ListForm(props){
                     value={listingForm.location}
                     onChange={changeHandler}
                     />
+                  {
+                    errorState.location.length>0? <p>{errorState.location}</p> : null
+                  }
              </label>
              <label htmlFor="lengthStay">Length of Stay 
                  <input 
@@ -22,6 +26,9 @@ function ListForm(props){
                     value={listingForm.lengthStay}
                     onChange={changeHandler}
                     />
+                {
+                    errorState.lengthStay.length>0? <p>{errorState.lengthStay}</p> : null
+                }
              </label>
              <label htmlFor="bedrooms">Bedrooms 
                  <input 
@@ -31,6 +38,9 @@ function ListForm(props){
                     value={listingForm.bedrooms}
                     onChange={changeHandler}
                     />
+                {
+                    errorState.bedrooms.length>0? <p>{errorState.bedrooms}</p> : null
+                }
              </label>
              <label htmlFor="bathrooms">Bathrooms 
                  <input 
@@ -40,17 +50,30 @@ function ListForm(props){
                     value={listingForm.bathrooms}
                     onChange={changeHandler}
                     />
+                {
+                    errorState.bathrooms.length>0? <p>{errorState.bathrooms}</p> : null
+                }
              </label>
              <label htmlFor="type">Type
-                 <input 
+                 <select
                     id="type"
                     name="type"
-                    type="text"
                     value={listingForm.type}
                     onChange={changeHandler}
-                    />
+                    >
+                  <option value="">Select Type</option>
+                  <option value="entire place">Entire Place</option>
+                  <option value="private room">Private Room</option>
+                  <option value="shared room">Shared Room</option>
+                </select>
+                 
+                
+                    {
+                        errorState.type.length>0? <p>{errorState.type}</p> : null
+                    }
              </label>
              <button disabled={submitDisabled} type="submit">Submit</button>
+             <pre>{JSON.stringify(listings, null, 2)}</pre>
          </form>
     )
 }
