@@ -34,7 +34,9 @@ function ListForm(props){
                  <input 
                     id="bedrooms"
                     name="bedrooms"
-                    type="text"
+                    type="number"
+                    min="1"
+                    max="5"
                     value={listingForm.bedrooms}
                     onChange={changeHandler}
                     />
@@ -46,7 +48,9 @@ function ListForm(props){
                  <input 
                     id="bathrooms"
                     name="bathrooms"
-                    type="text"
+                    type="number"
+                    min="1"
+                    max="5"
                     value={listingForm.bathrooms}
                     onChange={changeHandler}
                     />
