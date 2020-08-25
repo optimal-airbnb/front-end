@@ -25,7 +25,7 @@
     border: 1px solid black;
     border-radius: 10px;
     font-size: 25px;
-    width: 700px;
+    width: 800px;
     margin: 0 auto;
     background:rgba(0, 0, 0, 0.8);
     color: rgba(129, 164, 228)
@@ -36,17 +36,6 @@
 
 h2{
     text-align: center;
+    margin: 25px 15px;
 }
 
-label{
-    margin: 10px 10px;
-}
-
-input{
-    width: 100%;
-}
-
-button{
-    margin: 10px 10px;
-    padding: 10px;
-}

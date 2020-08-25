@@ -18,7 +18,7 @@ function ListForm(props){
                     onChange={changeHandler}
                     />
                   {
-                    errorState.location.length>0? <p>{errorState.location}</p> : null
+                    errorState.location.length>0? <p className="error-msg">{errorState.location}</p> : null
                   }
              </label>
              <label htmlFor="lengthStay">Length of Stay 
@@ -30,7 +30,7 @@ function ListForm(props){
                     onChange={changeHandler}
                     />
                 {
-                    errorState.lengthStay.length>0? <p>{errorState.lengthStay}</p> : null
+                    errorState.lengthStay.length>0? <p className="error-msg">{errorState.lengthStay}</p> : null
                 }
              </label>
              <label htmlFor="bedrooms">Bedrooms 
@@ -44,7 +44,7 @@ function ListForm(props){
                     onChange={changeHandler}
                     />
                 {
-                    errorState.bedrooms.length>0? <p>{errorState.bedrooms}</p> : null
+                    errorState.bedrooms.length>0? <p className="error-msg">{errorState.bedrooms}</p> : null
                 }
              </label>
              <label htmlFor="bathrooms">Bathrooms 
@@ -58,7 +58,7 @@ function ListForm(props){
                     onChange={changeHandler}
                     />
                 {
-                    errorState.bathrooms.length>0? <p>{errorState.bathrooms}</p> : null
+                    errorState.bathrooms.length>0? <p className="error-msg">{errorState.bathrooms}</p> : null
                 }
              </label>
              <label htmlFor="type">Type
@@ -76,7 +76,7 @@ function ListForm(props){
                  
                 
                     {
-                        errorState.type.length>0? <p>{errorState.type}</p> : null
+                        errorState.type.length>0? <p className="error-msg">{errorState.type}</p> : null
                     }
              </label>
              <button 
