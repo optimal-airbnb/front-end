@@ -18,7 +18,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        airbnb price optimizer
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -89,6 +89,17 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
+                id="username"
+                label="Username"
+                name="username"
+                autoComplete="username"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
                 id="email"
                 label="Email Address"
                 name="email"
@@ -110,7 +121,7 @@ export default function SignUp() {
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                label="I want to receive listing updates via email."
               />
             </Grid>
           </Grid>
