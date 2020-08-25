@@ -47,7 +47,7 @@ export const userLogin = (user) => (dispath) => {
 			console.log(res.data)
 			dispath({ type: USER_LOGIN_SUCCESS, payload: res.data })
 			localStorage.setItem('token', res.data.token)
-			history.pushState('/user/app')
+			history.push('/user/app')
 		})
 		.catch((err) => {
 			dispath({
