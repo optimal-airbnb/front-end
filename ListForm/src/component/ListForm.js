@@ -8,7 +8,8 @@ function ListForm(props){
 
     return(
          <form onSubmit={submitHandler}>
-             <label htmlFor="location">Location 
+            <div className="inputs">
+            <label htmlFor="location">Location 
                  <input 
                     id="location"
                     name="location"
@@ -85,6 +86,11 @@ function ListForm(props){
                 >Submit
                 </button>
              <pre>{JSON.stringify(listings, null, 2)}</pre>
+
+            </div>
+             <div className="outputs">
+                 <h4>Your optimal price</h4>
+             </div>
          </form>
     )
 }
