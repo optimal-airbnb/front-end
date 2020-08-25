@@ -19,11 +19,11 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* Meyers Reset Above */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 html{
     font-size: 62.5%;
     box-sizing: border-box;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Montserrat', sans-serif;
 }
 
 nav{
@@ -48,10 +48,12 @@ nav{
 }
 .nav-top{
     display: flex;
-    margin: 1%;
+    padding: 10px;
+
     justify-items: stretch;
     align-items: stretch;
-    
+    border-bottom: 1px solid lightgray;
+    background-color: white;
 }
 .nav-left{
     width: 20%;
@@ -83,7 +85,7 @@ nav{
 h1{
     font-size: 5rem;
     text-align: center;
-    margin: 4% 0;
+    margin: 4% 0%;
 }
 
 .left{
@@ -111,7 +113,55 @@ h2{
     margin-bottom: 1%;
     color: #E9967A;
 }
-
+.faqcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #DC143C;
+    padding: 30px 0px;
+}
+article {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px 15px 15px;
+    width: 40%;
+    margin: 1% 1%; 
+    font-size:1.2rem;
+    border-radius: 25px;
+    border: 1px solid blue;
+    background-color: white;
+    border: 1px solid white;
+    color: lightgray;
+    font-family: 'Montserrat', sans-serif;
+}
+article h1 {
+    font-weight: 600;
+    margin: 0;
+    margin-top: 10px;
+    font-size:4rem;
+    text-align: left;
+    align-self:flex-start;
+    color: rgb(46, 46, 46);
+}
+article h3 {
+    background-color: rgb(0, 122, 256);
+    color:white;
+    border-radius: 25px;
+    margin: 0;
+    padding:5px 10px;
+    margin: 10px 0;
+    text-align: left;
+    align-self: flex-start;
+}
+article p {
+    font-weight: 200;
+    color:rgb(7, 7, 7);
+    align-self: flex-end;
+    margin-bottom:auto;
+}
 .container-1{
     display: flex;
     margin: 5%;
@@ -174,6 +224,12 @@ h2{
     margin: 5%;
 }
 @media (max-width: 500px){
+    .faqcontainer {
+        flex-direction: column;
+    }
+    article {
+        width:80%;
+    }
     .nav-top{
         display: flex;
         flex-direction: column;
