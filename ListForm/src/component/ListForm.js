@@ -1,12 +1,15 @@
 import React from 'react'
 import './ListForm.css'
 
+
+
 function ListForm(props){
     const { listingForm, submitDisabled, listings, errorState, changeHandler, submitHandler } = props
 
     return(
          <form onSubmit={submitHandler}>
-             <label htmlFor="location">Location 
+            <div className="inputs">
+            <label htmlFor="location">Location 
                  <input 
                     id="location"
                     name="location"
@@ -76,11 +79,22 @@ function ListForm(props){
                         errorState.type.length>0? <p>{errorState.type}</p> : null
                     }
              </label>
-             <button disabled={submitDisabled} type="submit">Submit</button>
+             <button 
+                disabled={submitDisabled} 
+                type="submit"
+                style= {submitDisabled===false?{color:"white", backgroundColor:"rgba(129, 164, 228)"}:null}
+                >Submit
+                </button>
              <pre>{JSON.stringify(listings, null, 2)}</pre>
+
+            </div>
+             <div className="outputs">
+                 <h4>Your optimal price</h4>
+             </div>
          </form>
     )
 }
 
 export default ListForm
+                
 
