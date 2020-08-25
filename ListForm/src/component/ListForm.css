@@ -9,3 +9,11 @@ label{
     display: flex;
     flex-direction: column;
 }
+
+button{
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
