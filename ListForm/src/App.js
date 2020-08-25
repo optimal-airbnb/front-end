@@ -4,11 +4,11 @@ import * as yup from 'yup'
 import './App.css'
 
 const formSchema = yup.object().shape({
-  location: yup.string().required("Location is a required field"),
-  lengthStay: yup.string().required("Length of stay is a required field"),
+  location: yup.string().required("Location is required"),
+  lengthStay: yup.string().required("Length of stay is required"),
   bedrooms: yup.string(),
   bathrooms: yup.string(),
-  type: yup.string().required("Type is a required field")
+  type: yup.string().required("Type is a required")
 })
 
 const initialFormValues={
