@@ -4,11 +4,11 @@ import * as yup from 'yup'
 import './App.css'
 
 const formSchema = yup.object().shape({
-  'borough' : yup.string().required("borough is required"),
-  'neighborhood' : yup.string(),
+  'borough' : yup.string().required("Borough is required"),
+  'neighborhood' : yup.string().required("Neighborhood is required"),
   'room_type' : yup.string(),
-  'availability_365' : yup.number().typeError("Enter valid number").max(365,"Enter number less than 365"),
-  'minimum_nights' : yup.number()
+  'availability_365' : yup.number().typeError("Enter valid number").min(1,"Cannot be less than 1").max(365,"Cannot be more than 365"),
+  'minimum_nights' : yup.number().typeError("Enter valid number").min(1,"Cannot be less than 1").max(6,"Cannot be more than 365")
 })
 
 const initialFormValues={
@@ -43,15 +43,18 @@ function App() {
     
     //convert string to number if form input type is number
     if(e.target.type === 'number'){
-      const temp = Number(e.target.value)
-    setListingForm({...listingForm, [e.target.name] : temp})
+      setListingForm({...listingForm, [e.target.name] : parseInt(e.target.value)})
+    }
+    else{
+    setListingForm({...listingForm, [e.target.name] : e.target.value})
       
     }
-
-
-    setListingForm({...listingForm, [e.target.name] : e.target.value})
-
+      
   }
+      
+
+
+
   
   //handles submit to an array for now
   function submitHandler(e){
