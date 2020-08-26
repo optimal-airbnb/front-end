@@ -1,16 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './ListForm.css'
+import nData from '../Data/nData'
 
 
 
 function ListForm(props){
     const { listingForm, submitDisabled, listings, errorState, changeHandler, submitHandler } = props
-    
-//     borough :: string
-// neighborhood :: string
-// room_type :: string
-// availability_365 :: integer
-// minimum_nights :: integer
+    //array of neighborhoods
+    const [nArray, setNArray ] = useState(nData)
+
 
     return(
          <form onSubmit={submitHandler}>
@@ -43,20 +41,53 @@ function ListForm(props){
                     >
                   <option value="">Select one</option>
                   {
-                      listingForm['borough']=== 'Manhattan'?(
-                        <>
-                        <option value="Bronx">Bronx</option>
-                        <option value="Manhattan">Manhattan</option>
-                        <option value="Brooklyn">Brooklyn</option>
-                        </>
-                        ) :   
-                        <option value="Queens">Queens</option>
+                      nArray.map((n)=>{
+                          return <option value={n}>{n}</option>
+                      })
                   }
                </select>
+
+                {/* way to render neighborhood by borough if needed*/}
+                  {/* {  
+                      listingForm['borough']==='Manhattan'?(
+                        <>
+                        <option value="Mneighbor#1">Mneighbor#1</option>
+                        <option value="Mneighbor#2">Mneighbor#2</option>
+                        </>) 
+                        :
+                        listingForm['borough']==='Bronx'?(
+                            <>
+                            <option value="Bneighbor#1">Bneighbor#1</option>
+                            <option value="Bneighbor#2">Bneighbor#2</option>
+                            </>) 
+                            :
+                        listingForm['borough']==='Brooklyn'?(
+                            <>
+                            <option value="Brookneighbor#1">Brookneighbor#1</option>
+                            <option value="Brookneighbor#2">Brookneighbor#2</option>
+                            </>) 
+                            :
+                        listingForm['borough']==='Queens'?(
+                            <>
+                            <option value="Qneighbor#1">Qneighbor#1</option>
+                            <option value="Qneighbor#2">Qneighbor#2</option>
+                            </>) 
+                            :
+                            
+                                <>
+                                <option value="SIneighbor#1">SIneighbor#1</option>
+                                <option value="SIneighbor#2">SIneighbor#2</option>
+                                </>
+                        
+                  } */}
                 {
                     errorState['neighborhood'].length>0? <p className="error-msg">{errorState['neighborhood']}</p> : null
                 }
                         
+                        
+
+                        
+                       
 
 
                       
@@ -88,7 +119,7 @@ function ListForm(props){
                     type="number"
                     
                     min = "1"
-                    max="6"
+                    max="365"
                     value={listingForm['availability_365']}
                     onChange={changeHandler}
                     />
@@ -103,7 +134,7 @@ function ListForm(props){
                     name="minimum_nights"
                     type="number"
                     min="1"
-                    max="5"
+                    max="365"
                     value={listingForm['minimum_nights']}
                     
                     onChange={changeHandler}
@@ -124,11 +155,7 @@ function ListForm(props){
             </div>
              <div className="outputs">
                  <h4>Your optimal price </h4>
-                 <p>YOu chose this location</p>
-                 <p>YOu chose this length </p>
-                 <p>YOu chose # bedrooms</p>
-                 <p>YOu chose # bathrooms</p>
-                 <p>YOu chose this type</p>
+                 
                  <p>Your optimal price is this</p>
              </div>
          </form>

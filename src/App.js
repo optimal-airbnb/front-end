@@ -6,9 +6,9 @@ import './App.css'
 const formSchema = yup.object().shape({
   'borough' : yup.string().required("Borough is required"),
   'neighborhood' : yup.string().required("Neighborhood is required"),
-  'room_type' : yup.string(),
+  'room_type' : yup.string().required("Room type is required"),
   'availability_365' : yup.number().typeError("Enter valid number").min(1,"Cannot be less than 1").max(365,"Cannot be more than 365"),
-  'minimum_nights' : yup.number().typeError("Enter valid number").min(1,"Cannot be less than 1").max(6,"Cannot be more than 365")
+  'minimum_nights' : yup.number().typeError("Enter valid number").min(1,"Cannot be less than 1").max(365,"Cannot be more than 365")
 })
 
 const initialFormValues={
