@@ -1,29 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import ListForm from './component/ListForm'
 import * as yup from 'yup'
+import axios from 'axios'
 import './App.css'
 
 const formSchema = yup.object().shape({
-  'borough' : yup.string().required("Borough is required"),
-  'neighborhood' : yup.string().required("Neighborhood is required"),
-  'room_type' : yup.string().required("Room type is required"),
-  'availability_365' : yup.number().typeError("Enter valid number").min(1,"Cannot be less than 1").max(365,"Cannot be more than 365"),
-  'minimum_nights' : yup.number().typeError("Enter valid number").min(1,"Cannot be less than 1").max(365,"Cannot be more than 365")
+  'Borough' : yup.string().required("Borough is required"),
+  'Neighbourhood' : yup.string().required("Neighborhood is required"),
+  'Room_type' : yup.string().required("Room type is required"),
+  'Minimum_nights' : yup.number().typeError("Enter valid number").min(1,"Cannot be less than 1").max(365,"Cannot be more than 365"),
+
+  'Availability_365' : yup.number().typeError("Enter valid number").min(1,"Cannot be less than 1").max(365,"Cannot be more than 365")
 })
 
 const initialFormValues={
-  'borough' : '',
-  'neighborhood' : '',
-  'room_type' : '',
-  'availability_365' : 365,
-  'minimum_nights' : 1
+  'Borough' : '',
+  'Neighbourhood' : '',
+  'Room_type' : '',
+  'Minimum_nights' : 1,
+  'Availability_365' : 365
 }
+
 const initialErrorValues={
-  'borough' : '',
-  'neighborhood' : '',
-  'room_type' : '',
-  'availability_365' : '',
-  'minimum_nights' : ''
+  'Borough' : '',
+  'Neighbourhood' : '',
+  'Room_type' : '',
+  'Minimum_nights' : '',
+  'Availability_365' : ''
 }
 
 function App() {
@@ -35,6 +38,8 @@ function App() {
   const[ errorState, setErrorState ] = useState(initialErrorValues)
   //sumbit button is turned off until form is validated
   const[ submitDisabled, setSubmitDisabled ] = useState(true)
+  //price
+  const [ price, setPrice] = useState({})
   
   //handles input
   function changeHandler(e){
@@ -60,10 +65,18 @@ function App() {
   function submitHandler(e){
     e.preventDefault()
     let tempListings = [...listings]
-    tempListings = [...tempListings, listingForm]
-    setListings(tempListings)
+      tempListings = [...tempListings, listingForm]
+      setListings(tempListings)
+    axios.post('https://airbnbpricer.herokuapp.com/predict', listingForm)
+    .then(response =>{
+      console.log(response.data)
+      setPrice(response.data)
+
+    })
+    .catch(err=> console.log(err))
+
     setListingForm(initialFormValues)
-    setErrorState(initialErrorValues)
+    
   }
   
   //checks input with yup
@@ -101,6 +114,7 @@ function App() {
              <ListForm listingForm={listingForm} 
                 submitDisabled={submitDisabled} 
                 listings = {listings}
+                price ={price}
                 errorState = {errorState}
                 changeHandler={changeHandler} 
                 submitHandler={submitHandler}/>
