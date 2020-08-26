@@ -53,6 +53,7 @@ nav{
     justify-items: stretch;
     align-items: stretch;
     border-bottom: 1px solid lightgray;
+    
     background-color: white;
 }
 .nav-left{
@@ -192,6 +193,15 @@ article p {
 .active {
     text-decoration: underline;
 }
+.contactTitle {
+    
+    color:white;
+    background-color: rgb(255, 35, 90);
+    border-bottom: 1px solid lightgray;
+    width:100%;
+    padding-top:1%;
+    font-weight: bold;
+}
 
 .about-p-container{
     width: 80%;
@@ -199,12 +209,6 @@ article p {
     font-size: 1.6rem;
 }
 
-.nav-section{
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
 .about-img-container{
     display: flex;
     flex-wrap: wrap;
