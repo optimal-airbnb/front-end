@@ -223,6 +223,7 @@ article p {
 .about-heading{
     margin: 5%;
 }
+
 @media (max-width: 500px){
     .faqcontainer {
         flex-direction: column;
@@ -234,6 +235,7 @@ article p {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-bottom: 5%;
     }
     .nav-left{
         width: 100%;
@@ -289,8 +291,8 @@ article p {
         flex-flow: column;
         align-items: center;
     }
-    .about-img-container{
-        display: flex;
+    .about-img-container img{
+        width: 80%;
     }
 
 }
