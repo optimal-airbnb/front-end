@@ -6,76 +6,71 @@ import './ListForm.css'
 function ListForm(props){
     const { listingForm, submitDisabled, listings, errorState, changeHandler, submitHandler } = props
     
-    
+//     borough :: string
+// neighborhood :: string
+// room_type :: string
+// availability_365 :: integer
+// minimum_nights :: integer
 
     return(
          <form onSubmit={submitHandler}>
             <div className="inputs">
-            <label htmlFor="location">
-                 <input className="text"
-                    id="location"
-                    name="location"
-                    type="text"
-                    placeholder="Location"
-                    value={listingForm.location}
-                    onChange={changeHandler}
-                    />
-                  {
-                    errorState.location.length>0? <p className="error-msg">{errorState.location}</p> : null
-                  }
-             </label>
-             <label htmlFor="lengthStay">
-                 <input className="text"
-                    id="lengthStay"
-                    name="lengthStay"
-                    type="text"
-                    placeholder="Length of Stay"
-                    value={listingForm.lengthStay}
-                    onChange={changeHandler}
-                    />
-                {
-                    errorState.lengthStay.length>0? <p className="error-msg">{errorState.lengthStay}</p> : null
-                }
-             </label>
-             <label htmlFor="bedrooms">Bedrooms
-                 <input 
-                    id="bedrooms"
-                    name="bedrooms"
-                    type="number"
-                    
-                    min = "1"
-                    max="6"
-                    value={listingForm.bedrooms}
-                    onChange={changeHandler}
-                    />
-                    
-                {
-                    errorState.bedrooms.length>0? <p className="error-msg">{errorState.bedrooms}</p> : null
-                }
-             </label>
-             <label htmlFor="bathrooms">Bathrooms 
-                 <input 
-                    id="bathrooms"
-                    name="bathrooms"
-                    type="number"
-                    min="1"
-                    max="5"
-                    value={listingForm.bathrooms}
-                    
-                    onChange={changeHandler}
-                    />
-                {
-                    errorState.bathrooms.length>0? <p className="error-msg">{errorState.bathrooms}</p> : null
-                }
-             </label>
-             <label htmlFor="type">Type
-                 <select
-                    id="type"
-                    name="type"
-                    value={listingForm.type}
+            <label htmlFor="borough">Borough
+               
+               <select
+                    id="borough"
+                    name="borough"
+                    value={listingForm['borough']}
                     onChange={changeHandler}
                     >
-                  <option value="">Select Type</option>
+                  <option value="">Select one</option>
+                  <option value="Bronx">Bronx</option>
+                  <option value="Manhattan">Manhattan</option>
+                  <option value="Brooklyn">Brooklyn</option>
+                  <option value="Queens">Queens</option>
+                  <option value="Staten Island">Staten Island</option>
+               </select>
+                  {
+                    errorState['borough'].length>0? <p className="error-msg">{errorState['borough']}</p> : null
+                  }
+             </label>
+             <label htmlFor="neighborhood">Neighborhood
+               <select
+                    id="neighborhood"
+                    name="neighborhood"
+                    value={listingForm['neighborhood']}
+                    onChange={changeHandler}
+                    >
+                  <option value="">Select one</option>
+                  {
+                      listingForm['borough']=== 'Manhattan'?(
+                        <>
+                        <option value="Bronx">Bronx</option>
+                        <option value="Manhattan">Manhattan</option>
+                        <option value="Brooklyn">Brooklyn</option>
+                        </>
+                        ) :   
+                        <option value="Queens">Queens</option>
+                  }
+               </select>
+                {
+                    errorState['neighborhood'].length>0? <p className="error-msg">{errorState['neighborhood']}</p> : null
+                }
+                        
+
+
+                      
+                  
+                  
+             </label>
+             <label htmlFor="room_type">room_type
+                 <select
+                    id="room_type"
+                    name="room_type"
+                    value={listingForm['room_type']}
+                    onChange={changeHandler}
+                    >
+                  <option value="">Select room_type</option>
                   <option value="entire place">Entire Place</option>
                   <option value="private room">Private Room</option>
                   <option value="shared room">Shared Room</option>
@@ -83,9 +78,41 @@ function ListForm(props){
                  
                 
                     {
-                        errorState.type.length>0? <p className="error-msg">{errorState.type}</p> : null
+                        errorState['room_type'].length>0? <p className="error-msg">{errorState['room_type']}</p> : null
                     }
              </label>
+             <label htmlFor="availability_365">availability_365
+                 <input 
+                    id="availability_365"
+                    name="availability_365"
+                    type="number"
+                    
+                    min = "1"
+                    max="6"
+                    value={listingForm['availability_365']}
+                    onChange={changeHandler}
+                    />
+                    
+                {
+                    errorState['availability_365'].length>0? <p className="error-msg">{errorState['availability_365']}</p> : null
+                }
+             </label>
+             <label htmlFor="minimum_nights">minimum_nights 
+                 <input 
+                    id="minimum_nights"
+                    name="minimum_nights"
+                    type="number"
+                    min="1"
+                    max="5"
+                    value={listingForm['minimum_nights']}
+                    
+                    onChange={changeHandler}
+                    />
+                {
+                    errorState['minimum_nights'].length>0? <p className="error-msg">{errorState['minimum_nights']}</p> : null
+                }
+             </label>
+             
              <button 
                 disabled={submitDisabled} 
                 type="submit"

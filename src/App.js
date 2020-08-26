@@ -4,26 +4,26 @@ import * as yup from 'yup'
 import './App.css'
 
 const formSchema = yup.object().shape({
-  location: yup.string().required("Location is required"),
-  lengthStay: yup.string().required("Length of stay is required"),
-  bedrooms: yup.number().positive().nullable(true),
-  bathrooms: yup.number(),
-  type: yup.string().required("Type is a required")
+  'borough' : yup.string().required("borough is required"),
+  'neighborhood' : yup.string(),
+  'room_type' : yup.string(),
+  'availability_365' : yup.number().typeError("Enter valid number").max(365,"Enter number less than 365"),
+  'minimum_nights' : yup.number()
 })
 
 const initialFormValues={
-    location : "",
-    lengthStay : "",
-    bedrooms : 1,
-    bathrooms : 1,
-    type : ""
+  'borough' : '',
+  'neighborhood' : '',
+  'room_type' : '',
+  'availability_365' : 365,
+  'minimum_nights' : 1
 }
 const initialErrorValues={
-    location : "",
-    lengthStay : "",
-    bedrooms : "",
-    bathrooms : "",
-    type : ""
+  'borough' : '',
+  'neighborhood' : '',
+  'room_type' : '',
+  'availability_365' : '',
+  'minimum_nights' : ''
 }
 
 function App() {
@@ -40,7 +40,17 @@ function App() {
   function changeHandler(e){
     e.persist()
     validate(e)
+    
+    //convert string to number if form input type is number
+    if(e.target.type === 'number'){
+      const temp = Number(e.target.value)
+    setListingForm({...listingForm, [e.target.name] : temp})
+      
+    }
+
+
     setListingForm({...listingForm, [e.target.name] : e.target.value})
+
   }
   
   //handles submit to an array for now
