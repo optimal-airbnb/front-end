@@ -57,7 +57,7 @@ nav{
 }
 .nav-left{
     width: 20%;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .nav-right{
     height: 100%;
@@ -327,7 +327,11 @@ article p {
     font-size: 1.6rem;
     justify-content: center;
 }
-
+.fas{
+    width: 100%;
+    font-size: 4rem;
+    margin-left: 7%;
+}
 
 @media (max-width: 500px){
     .faqcontainer {
@@ -346,7 +350,6 @@ article p {
         width: 100%;
         height: 40px;
         justify-content:center;
-        border: 1px solid red;
     }
     .nav-right{
         display:flex;
@@ -411,6 +414,9 @@ article p {
     }
     .about-img-container img{
         width: 80%;
+    }
+    .fas{
+        visibility: hidden;
     }
 
 }
