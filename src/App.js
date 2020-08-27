@@ -30,8 +30,8 @@ const initialErrorValues={
 }
 
 function App() {
-  //contains array of listing objects
-  const [ listings, setListings ] = useState([])
+  //contains listing object
+  const [ listing, setListing ] = useState({})
   //contains listing form object
   const [ listingForm, setListingForm] = useState(initialFormValues)
   //Error messages failing yup schema
@@ -64,9 +64,8 @@ function App() {
   //handles submit to an array for now
   function submitHandler(e){
     e.preventDefault()
-    let tempListings = [...listings]
-      tempListings = [...tempListings, listingForm]
-      setListings(tempListings)
+      let tempListing = {...listingForm}
+      setListing(tempListing)
     axios.post('https://airbnbpricer.herokuapp.com/predict', listingForm)
     .then(response =>{
       console.log(response.data)
@@ -113,7 +112,7 @@ function App() {
            </div>
              <ListForm listingForm={listingForm} 
                 submitDisabled={submitDisabled} 
-                listings = {listings}
+                listing = {listing}
                 price ={price}
                 errorState = {errorState}
                 changeHandler={changeHandler} 

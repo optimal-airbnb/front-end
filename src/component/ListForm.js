@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 import './ListForm.css'
 import nData from '../Data/nData'
+import {brooklyn, manhattan, queens, staten, bronx} from '../Data/nData'
 
 
 
 function ListForm(props){
-    const { listingForm, submitDisabled, listings, price, errorState, changeHandler, submitHandler } = props
-
-
+    const { listingForm, submitDisabled, listing, price, errorState, changeHandler, submitHandler } = props
+    
     return(
          <form onSubmit={submitHandler}>
             <div className="inputs">
@@ -40,52 +40,78 @@ function ListForm(props){
                   <option value="">Select one</option>
                    {  
                       listingForm['Borough']==='Manhattan'?(
-                        <>
-                        <option value="Mneighbor#1">Mneighbor#1</option>
-                        <option value="Mneighbor#2">Mneighbor#2</option>
-                        </>) 
+                          <>
+                          {
+                              manhattan.map((n)=> {
+                                  return <option value={n}>{n}</option>
+                              })
+                          }
+                         </>)
                         :
                         listingForm['Borough']==='Bronx'?(
                             <>
-                            <option value="Bneighbor#1">Bneighbor#1</option>
-                            <option value="Bneighbor#2">Bneighbor#2</option>
+                            {
+                                bronx.map((n)=> {
+                                    return <option value={n}>{n}</option>
+                                })
+                            }
+                                
+                                
                             </>) 
                             :
                         listingForm['Borough']==='Brooklyn'?(
                             <>
-                            <option value="Kensington">Kensington</option>
-                            <option value="Brookneighbor#2">Brookneighbor#2</option>
+                            {
+                                brooklyn.map((n)=> {
+                                    return <option value={n}>{n}</option>
+                                })
+                        }
                             </>) 
-                            :
-                        listingForm['Borough']==='Queens'?(
+                        :
+                    listingForm['Borough']==='Queens'?(
+                        <>
+                         {
+                            queens.map((n)=> {
+                                return <option value={n}>{n}</option>
+                            })
+                        }
+                        </>) 
+                        : listingForm['Borough']==='Staten Island'?(
                             <>
-                            <option value="Qneighbor#1">Qneighbor#1</option>
-                            <option value="Qneighbor#2">Qneighbor#2</option>
-                            </>) 
-                            :
+                             {
+                                staten.map((n)=> {
+                                return <option value={n}>{n}</option>
+                            })
+                            }
+                            </>
+                        ): null
+                    }
+                 </select>
+                  {
+                      errorState['Neighbourhood'].length>0? <p className="error-msg">{errorState['Neighbourhood']}</p> : null
                             
-                                <>
-                                <option value="SIneighbor#1">SIneighbor#1</option>
-                                <option value="SIneighbor#2">SIneighbor#2</option>
-                                </>
-                        
                   }
-               </select>
+                        
+                           
+                            
+                                
+                                
+                                
+                            
+                                
+                            
+                        
+                               
+                        
+                        
 
                   
-                {
-                    errorState['Neighbourhood'].length>0? <p className="error-msg">{errorState['Neighbourhood']}</p> : null
-                }
-                        
                         
 
                         
                        
 
 
-                      
-                  
-                  
              </label>
              <label htmlFor="Room_type">Room Type
                  <select
@@ -94,8 +120,8 @@ function ListForm(props){
                     value={listingForm['Room_type']}
                     onChange={changeHandler}
                     >
-                  <option value="">Select Room_type</option>
-                  <option value="Entire place">Entire Place</option>
+                  <option value="">Select One</option>
+                  <option value="Entire home/apt">Entire Home/Apt</option>
                   <option value="Private room">Private Room</option>
                   <option value="Shared room">Shared Room</option>
                 </select>
@@ -143,18 +169,26 @@ function ListForm(props){
                 style= {submitDisabled===false?{color:"white", backgroundColor:"green"}:null}
                 >Submit
                 </button>
-             <pre>{JSON.stringify(listings, null, 2)}</pre>
+             <pre>{JSON.stringify(listing, null, 2)}</pre>
 
             </div>
              <div className="outputs">
-                 <h4>Your optimal price </h4>
+                 <p>Borough: {listing.Borough} </p>
+                 <p>Neighborhood: {listing.Neighbourhood} </p>
+                 <p>Room type: {listing['Room_type']} </p>
+                 <p>Minimum Nights: {listing['Minimum_nights']} </p>
+                 <p>Days Available: {listing['Availability_365']} </p>
                  
-            <p>Your optimal price is {price["predicted_price $"]}</p>
+            <p>Your optimal price is</p> 
+            <p style={{color:"green", fontSize: "40px"}}> {price["predicted_price "]}</p>
              </div>
          </form>
     )
 }
 
 export default ListForm
+                      
+                  
+                  
                 
 
