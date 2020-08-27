@@ -132,6 +132,9 @@ h1{
     width: 40%;
     flex-flow: column;
 }
+.right p{
+    margin-top: 5%;
+}
 
 h2{
     font-size: 4rem;
