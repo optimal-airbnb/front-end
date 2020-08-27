@@ -8,7 +8,7 @@ export const addListing = (newListing) => {
     dispatch({ type: ADD_LISTING, payload: newListing });
 
     axios
-      .post("https://reqres.in/api/users", newListing)
+      .post("https://airbnbpricer.herokuapp.com/predict", newListing)
       .then((res) => {
         console.log("NEW LISTING WAS ADDED SUCCESSFULLY", res);
       })

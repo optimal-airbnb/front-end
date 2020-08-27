@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import { brooklyn, manhattan, queens, staten, bronx } from "../Data/Data";
+
 import "../styles.css";
-// import formSchema from "./ListingsFormSchema";
 
 function ListingsForm(props) {
   const initialFormValues = {
-    borough: "",
-    neighborhood: "",
-    room_type: "",
-    availability_365: "",
-    minimum_nights: "",
+    Borough: "",
+    Neighbourhood: "",
+    Room_type: "",
+    Availability_365: "",
+    Minimum_nights: "",
   };
 
   const [listing, setListing] = useState(initialFormValues);
@@ -32,62 +33,112 @@ function ListingsForm(props) {
   return (
     <form onSubmit={submitHandler}>
       <div className="inputs">
-        <label htmlFor="borough">
+        <label htmlFor="Borough">
           <select
-            id="borough"
-            name="borough"
-            value={listing.borough}
+            id="Borough"
+            name="Borough"
+            value={listing.Borough}
             onChange={changeHandler}
           >
             <option value="">Borough</option>
-            <option value="the bronx">The Bronx</option>
-            <option value="manhattan">Manhattan</option>
-            <option value="brooklyn">Brooklyn</option>
-            <option value="queens">Queens</option>
-            <option value="staten island">Staten Island</option>
+            <option value="Bronx">The Bronx</option>
+            <option value="Manhattan">Manhattan</option>
+            <option value="Brooklyn">Brooklyn</option>
+            <option value="Queens">Queens</option>
+            <option value="Staten Island">Staten Island</option>
           </select>
         </label>
-        <label htmlFor="neighborhood">
-          <input
-            className="text"
-            id="neighborhood"
-            name="neighborhood"
-            type="text"
-            placeholder="Neighborhood"
-            value={listing.neighborhood}
-            onChange={changeHandler}
-          />
-        </label>
-        <label htmlFor="room_type">
+        <label htmlFor="Neighbourhood">
           <select
-            id="room_type"
-            name="room_type"
-            value={listing.room_type}
+            id="Neighbourhood"
+            name="Neighbourhood"
+            value={listing.Neighbourhood}
+            onChange={changeHandler}
+          >
+            <option value="">Select one</option>
+            {listing.Borough === "Manhattan" ? (
+              <>
+                {manhattan.map((n, index) => {
+                  return (
+                    <option value={n} id={index}>
+                      {n}
+                    </option>
+                  );
+                })}
+              </>
+            ) : listing.Borough === "Bronx" ? (
+              <>
+                {bronx.map((n, index) => {
+                  return (
+                    <option value={n} id={index}>
+                      {n}
+                    </option>
+                  );
+                })}
+              </>
+            ) : listing.Borough === "Brooklyn" ? (
+              <>
+                {brooklyn.map((n, index) => {
+                  return (
+                    <option value={n} id={index}>
+                      {n}
+                    </option>
+                  );
+                })}
+              </>
+            ) : listing.Borough === "Queens" ? (
+              <>
+                {queens.map((n, index) => {
+                  return (
+                    <option value={n} id={index}>
+                      {n}
+                    </option>
+                  );
+                })}
+              </>
+            ) : listing.Borough === "Staten Island" ? (
+              <>
+                {staten.map((n, index) => {
+                  return (
+                    <option value={n} id={index}>
+                      {n}
+                    </option>
+                  );
+                })}
+              </>
+            ) : null}
+          </select>
+        </label>
+        <label htmlFor="Room_type">
+          <select
+            id="Room_type"
+            name="Room_type"
+            value={listing.Room_type}
             onChange={changeHandler}
           >
             <option value="">Room Type</option>
-            <option value="entire place">Entire Place</option>
-            <option value="private room">Private Room</option>
-            <option value="shared room">Shared Room</option>
+            <option value="Entire home">Entire Home</option>
+            <option value="Private room">Private Room</option>
+            <option value="Shared room">Shared Room</option>
           </select>
         </label>
-        <label htmlFor="availability_365">
+        <label htmlFor="Availability_365">
           <input
-            id="availability_365"
-            name="availability_365"
+            id="Availability_365"
+            name="Availability_365"
             type="number"
             placeholder="Availability"
-            value={listing.availability_365}
+            value={listing.Availability_365}
             onChange={changeHandler}
           />
         </label>
-        <label htmlFor="minimum_nights">
+        <label htmlFor="Minimum_nights">
           <input
-            id="minimum_nights"
-            name="minimum_nights"
+            id="Minimum_nights"
+            name="Minimum_nights"
             type="number"
             placeholder="Minimum Nights"
-            value={listing.minimum_nights}
+            value={listing.Minimum_nights}
             onChange={changeHandler}
           />
         </label>
