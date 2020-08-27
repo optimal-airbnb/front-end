@@ -136,6 +136,7 @@ h1{
 h2{
     font-size: 4rem;
     margin-bottom: 1%;
+    margin-top: 5%;
     color: #E9967A;
 }
 .faqcontainer {
@@ -296,6 +297,10 @@ article p {
     border-radius: 2%;
     
 }
+.about-img-container img:hover{
+    opacity: 0.5;
+    transition: 1s;
+}
 
 .about-heading{
     margin: 5%;
@@ -314,6 +319,10 @@ article p {
     text-decoration: none;
     color: #E9967A;
 }
+.about-people a:hover{
+    color: #DC143C;
+}
+
 .about-main{
     display: flex;
     flex-flow: column;
@@ -401,11 +410,16 @@ article p {
         text-align: center;
         flex-wrap: wrap;
     }
+    .about-people{
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        width: 98%;
+    }
 
     .about-p-container{
         width: 80%;
         justify-content: center;
-        align-items: center;
     }
     .about-img-container{
         display: flex;
@@ -419,4 +433,29 @@ article p {
         visibility: hidden;
     }
 
+}
+
+@media(max-width: 800px){
+    .container-1{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+    .left{
+        width: 80%;
+        margin: 0 auto;
+        align-items: center;
+    }
+   
+    .right{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .button-1{
+        margin-top: 5%;
+    }
 }
