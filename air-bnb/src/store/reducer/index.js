@@ -24,7 +24,7 @@ export const reducer = (state = initialState, action) => {
     case ADD_LISTING:
       return {
         ...state,
-        listings: [...state.listings, action.payload],
+        listings: action.payload,
       };
     case ADD_LISTING_FAILED:
       return {
