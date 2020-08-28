@@ -16,23 +16,26 @@ function App(props) {
       <Router>
         <Nav />
         <Switch>
-          <Route exact path="/register">
+          <Route exact path="/">
             <SignUp userRegister={props.userRegister} />
           </Route>
-          <Route exact path="/login">
+          <Route path="/login">
             <SignInSide userLogin={props.userLogin} />
           </Route>
-        </Switch>
-        <div className="form-container">
-          <div className="form-wrapper">
-            <div className="header-container">
-              <h2>Rental Price Calculator</h2>
+          <div className="form-container">
+            <div className="form-wrapper">
+              <div className="header-container">
+                <h2>Rental Price Calculator</h2>
+              </div>
+              <PrivateRoute path="/listings">
+                <ListingsForm
+                  addListing={props.addListing}
+                  price={props.price}
+                />
+              </PrivateRoute>
             </div>
-            <PrivateRoute exact path="/listings">
-              <ListingsForm addListing={props.addListing} price={props.price} />
-            </PrivateRoute>
           </div>
-        </div>
+        </Switch>
       </Router>
     </div>
   );
