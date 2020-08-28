@@ -1,11 +1,11 @@
-form {
+.listings-form {
   display: flex;
   flex-direction: row;
   justify-content: center;
   justify-content: space-evenly;
 }
 
-label {
+.form-label {
   display: flex;
   flex-direction: column;
   margin: 10px 10px;
@@ -13,7 +13,7 @@ label {
   font-size: 16px;
 }
 
-button {
+.form-button {
   text-align: center;
   padding: 15px;
   border-radius: 5px;
@@ -25,7 +25,7 @@ h4 {
   margin: 10px 10px;
 }
 
-input {
+.form-input {
   width: 100%;
   padding: 3px;
 }
@@ -34,7 +34,7 @@ input[type="number"]::-webkit-inner-spin-button {
   opacity: 1;
 }
 
-button {
+.form-button {
   margin: 15px 15px;
   padding: 10px;
 }
@@ -52,4 +52,13 @@ pre {
   background: transparent;
   border: 0px;
   border-bottom: 2px solid white;
+}
+
+.outputs {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.outputs p {
+  margin: 10px;
 }
