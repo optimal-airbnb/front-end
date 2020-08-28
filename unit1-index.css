@@ -263,6 +263,9 @@ article p {
     border-radius: 5%;
     padding: 15px;
     border: none;
+    margin-bottom: 7%;
+}
+.button-1 a{
     margin-bottom: 5%;
 }
 
@@ -344,6 +347,36 @@ article p {
     font-size: 4rem;
     margin-left: 7%;
 }
+.fa-home{
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2%;
+}
+.login-container{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    margin-top: 10%;
+    font-size: 1.6rem;
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 20%;
+}
+.login-container input{
+    margin: 1%;
+}
+.login-container button{
+    background-color: #DC143C;
+    color: white;
+    padding: 10px;
+    border-radius: 20%;
+}
+.login-container button:hover{
+    background-color: white;
+    color: #DC143C;
+    transition: 1s;
+}
+
 
 @media (max-width: 500px){
     .faqcontainer {
@@ -434,6 +467,9 @@ article p {
     }
     .fas{
         visibility: hidden;
+    }
+    .fa-home{
+        visibility: visible;
     }
 
 }
