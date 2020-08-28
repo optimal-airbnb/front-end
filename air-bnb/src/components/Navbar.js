@@ -1,6 +1,13 @@
 import React from "react";
-// import Typography from "@material-ui/core/Typography";
-import { Menu, AppBar, Toolbar, Button, MenuItem } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import {
+  Menu,
+  AppBar,
+  Toolbar,
+  Button,
+  MenuItem,
+  Link,
+} from "@material-ui/core";
 // import CssBaseline from "@material-ui/core/CssBaseline";
 
 const Nav = () => {
@@ -32,16 +39,21 @@ const Nav = () => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem
-              onClick={
-                (handleClose,
-                () => {
-                  console.log("button is clicked");
-                })
-              }
-            >
-              Home
-            </MenuItem>
+            <Typography>
+              <Link href="https://relaxed-fermat-a20695.netlify.app/index.html">
+                <MenuItem
+                  onClick={
+                    (handleClose,
+                    () => {
+                      console.log("button is clicked");
+                    })
+                  }
+                >
+                  Home
+                </MenuItem>
+              </Link>
+            </Typography>
+
             <MenuItem onClick={handleClose}>About</MenuItem>
             <MenuItem onClick={handleClose}>Contact</MenuItem>
             <MenuItem onClick={handleClose}>Listings</MenuItem>
