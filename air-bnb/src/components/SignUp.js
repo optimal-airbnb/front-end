@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { useHistory } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -70,6 +71,8 @@ const SignUp = (props) => {
     setPassword("");
     setEmail("");
     setName("");
+
+    history.push("/login");
   };
 
   const [username, setUsername, handleUsername] = useInput("");
@@ -78,6 +81,7 @@ const SignUp = (props) => {
   const [name, setName, handleName] = useInput("");
 
   const classes = useStyles();
+  const history = useHistory();
 
   return (
     <Container component="main" maxWidth="xs">

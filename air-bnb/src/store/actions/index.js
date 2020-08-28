@@ -1,5 +1,4 @@
 import axios from "axios";
-// import { browserHistory } from "react-router-redux";
 import axiosWithAuth from "../../utils/axiosWithAuth";
 
 export const ADD_LISTING = "ADD_LISTING";

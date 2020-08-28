@@ -12,6 +12,7 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -77,12 +78,15 @@ const SignInSide = (props) => {
     });
     setUsername("");
     setPassword("");
+
+    history.push("/listings");
   };
 
   const [username, setUsername, handleUsername] = useInput("");
   const [password, setPassword, handlePassword] = useInput("");
 
   const classes = useStyles();
+  const history = useHistory();
 
   return (
     <Grid container component="main" className={classes.root}>

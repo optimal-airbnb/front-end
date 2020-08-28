@@ -213,8 +213,7 @@ function ListingsForm(props) {
 
         <p>Your optimal price is:</p>
         <p style={{ color: "green", fontSize: "40px" }}>
-          {" "}
-          {props.price["predicted_price "]}
+          {props.price ? props.price["predicted_price "] : null}
         </p>
       </div>
     </form>

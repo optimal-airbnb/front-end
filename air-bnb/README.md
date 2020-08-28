@@ -1,68 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+☝️ Proposal
 
-## Available Scripts
+What problem does your app solve? People with AirBnB listings don’t always know the correct price to post their listings? Allow someone with an AirBnB charge the optimal price. Not too expensive, not too cheap. Be as specific as possible; how does your app solve the problem? Our application looks at historical data to optimize AirBnB pricing in a given area What is the mission statement? Our application seeks to connect renters and relevant rental statistics/data
 
-In the project directory, you can run:
+💡 Features
 
-### `yarn start`
+What features are required for your minimum viable product? Web Unit 1 Format of the website Connect websites together UI, mobile and desktop interfaces Web Unit 2 Build form page Get users input > API > get data back What data do we need from users? Web Unit 3 Create list of users, from forms, checked when login Send form to API Web Unit 4 Authentication workflow Web token Backend endpoint test Data Engineering Endpoints deployed to Heroku Data exploratory analysis Machine Learning Engineering Heroku app deployed Visualization, data exploration Training a model
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+User input and sending data Features: room type, minimum number of nights, location API Endpoints: Each user can only add to their own user, can see their own listing Optimal price: comes from Data Science
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+What features may you wish to put in a future release? Stretch Goals What do the top 3 similar apps do for their users? Data Science: https://airbnb-pricing-prediction.herokuapp.com/ Zillow has rental predictions https://beyondpricing.com/
 
-### `yarn test`
+🛠 Frameworks - Libraries
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+What 3rd party frameworks/libraries are you considering using? UI- Bootstrap, FontAwesome, React- React-dom, react-router, yup, material-ui, Axios, Redux.. Backend- JSON web tokens, Knex, sqlite3, express and cors Data Science- FastAPI/Flask Machine Learning- EDA, Modeling, Modeling Log Do the APIs you need require you to contact them to gain access? Are you required to pay to use said API(s)? 🧮 For Data Scientists
 
-### `yarn build`
+Describe the established data source with at least rough data able to be provided on day one. Kaggle dataset: NYC from 2019, takes housing/apartment data, boroughs, zip code, number of postings Write a description for what the data science problem is. What uncertainty or prediction are you trying to discover? How could this data be used to find a solution to this problem? Are prices regional? Ideal price to list for? If we are entering a certain area, what is our rental price? Seasonality, duration, bedrooms, bathrooms What kind of target output can you deliver to the Web teams to work with? Is it in JSON format or something else? Input: Zip Code (Location), length of stay, bedrooms, bathrooms, type Output: optimum price 🎯 Target Audience
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Who is your target audience? Be specific. Property owners, business people, and those who are renting Vacation rental property owners People looking to make some extra money
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+🔑 Schedule
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+How long do you think it will take to implement these features? Do you anticipate working on stretch functionality after completion of a Minimal Viable Product? Monday: API endpoints agreed upon, scaffolding established, clear direction for the rest of the week. Web 1: build basic HTML/CSS page, format front page, implement classes Web 2: coordinate with web 3 Web 3: coordinate with web 2 Web 4: Improve the users route and auth route looking in to create table for property list. Data Engineering: Heroku deployment, API endpoints agreed upon Data Science 2: finish EDA notebook, finish functions, modeling, transform log Tuesday: Web: Data Science: Wednesday: soft MVP deadline (for Data Science) Web: Data Science: Thursday: Web: Data Science:
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Register, login, location form
