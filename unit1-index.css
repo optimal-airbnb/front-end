@@ -1,0 +1,464 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* Meyers Reset Above */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+    font-size: 2rem;
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    justify-content: flex-end;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    height:100%;
+}
+.nav{
+    text-decoration: none;
+    color: black;
+    border-radius: 25px;
+    padding: 12px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid white;
+    
+}
+.nav-top{
+    display: flex;
+    padding: 10px;
+    justify-items: stretch;
+    align-items: stretch;
+    border-bottom: 1px solid lightgray;
+    
+    background-color: white;
+}
+.nav-left{
+    width: 20%;
+    justify-content: flex-start;
+}
+.nav-right{
+    height: 100%;
+    width: 80%;
+    justify-content: flex-end;
+}
+.nav:hover{
+    background-color: white;
+    color: #000;
+    transition: 0.2s;
+    text-decoration: underline;
+}
+.contactButton {
+    text-decoration: none;
+    color: black;
+    border-radius: 25px;
+    padding: 12px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding: 12px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 2rem;
+}
+.callToAction {
+    background-color: #DC143C;
+    border: 1px solid white;
+    color: white;
+}
+.callToAction:hover {
+    background-color: #DC143C;
+    border: 1px solid white;
+    color: white;
+    text-decoration: underline;
+}
+.center {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 48px;
+    }
+
+.center a {
+    color:white;
+    align-self: center;
+}
+h1{
+    font-size: 5rem;
+    text-align: center;
+    margin: 4% 0%;
+}
+
+.left{
+    display: flex;
+    width: 30%;
+    margin: 1%
+}
+
+.img-1{
+    width: 100%;
+    height: 50vh;
+    border-radius: 2%;
+}
+
+.right{
+    display: flex;
+    font-size: 1.6rem;
+    margin: 1%;
+    width: 40%;
+    flex-flow: column;
+}
+.right p{
+    margin-top: 5%;
+}
+
+h2{
+    font-size: 4rem;
+    margin-bottom: 1%;
+    margin-top: 5%;
+    color: #E9967A;
+}
+.faqcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #DC143C;
+    padding: 30px 0px;
+}
+.contactContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: rgb(241, 223, 161);
+    padding: 30px 0px;
+}
+.contactCardHolder {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    max-width: 1000px;
+    border: 1px solid rgb(192, 0, 0);
+}
+.cardholder {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    max-width: 1000px;
+}
+article {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px 15px 15px;
+    width: 40%;
+    margin: 1% 1%; 
+    font-size:1.2rem;
+    border-radius: 25px;
+    background-color: white;
+    border: 1px solid white;
+    color: rgb(31, 31, 31);
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 5px 5px #d4d4d4;
+}
+
+article h1 {
+    font-weight: 600;
+    margin: 0;
+    margin-top: 10px;
+    font-size:4rem;
+    text-align: left;
+    align-self:flex-start;
+    color: rgb(46, 46, 46);
+}
+article h3 {
+    background-color: rgb(0, 122, 255);
+    color:white;
+    border-radius: 25px;
+    margin: 0;
+    padding:5px 10px;
+    margin: 10px 0;
+    text-align: left;
+    align-self: flex-start;
+}
+article p {
+    font-weight: 200;
+    color:rgb(7, 7, 7);
+    align-self: flex-end;
+    margin-bottom:auto;
+}
+.contactContainer {
+    display: flex;
+    flex-direction: row;
+}
+.contactContainer .contactCard { 
+    margin: 2%;
+    width: 40%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 15px 15px 15px;
+    font-size:1.2rem;
+    border-radius: 25px;
+    background-color: white;
+    color: rgb(31, 31, 31);
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 5px 5px #d4d4d4;
+}
+.contactContainer .contactCard img { 
+    margin: 2%;
+    width: 5%;
+    align-self: flex-start;
+}
+.contactContainer .contactCard p { 
+    font-size: 2rem;
+}
+.container-1{
+    display: flex;
+    margin: 5%;
+    justify-content: center;
+}
+
+.button-1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.button-1 button{
+    background-color: #DC143C;
+    color: white;
+    font-size: 20px;
+    border-radius: 5%;
+    padding: 15px;
+    border: none;
+    margin-bottom: 5%;
+}
+
+.button-1 button:hover{
+    background-color: white;
+    color: #DC143C;
+    transition: 1s;
+    border: none;
+}
+.active {
+    text-decoration: underline;
+}
+.contactTitle {
+    
+    color:white;
+    background-color: rgb(255, 35, 90);
+    border-bottom: 1px solid lightgray;
+    width:100%;
+    padding-top:1%;
+    font-weight: bold;
+}
+
+.about-img-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.about-img-container img{
+    width: 20%;
+    margin: 1% 3%;
+    border-radius: 2%;
+    
+}
+.about-img-container img:hover{
+    opacity: 0.5;
+    transition: 1s;
+}
+
+.about-heading{
+    margin: 5%;
+}
+.about-people{
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    margin-bottom: 5%;
+    text-align: center;
+    text-decoration: none;
+    flex-flow: column;
+    font-size: 2rem;
+}
+.about-people a{
+    text-decoration: none;
+    color: #E9967A;
+}
+.about-people a:hover{
+    color: #DC143C;
+}
+
+.about-main{
+    display: flex;
+    flex-flow: column;
+    justify-items: center;
+}
+
+.about-p-container{
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    justify-content: center;
+}
+.fas{
+    width: 100%;
+    font-size: 4rem;
+    margin-left: 7%;
+}
+
+@media (max-width: 500px){
+    .faqcontainer {
+        flex-direction: column;
+    }
+    article {
+        width:80%;
+    }
+    .nav-top{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 5%;
+    }
+    .nav-left{
+        width: 100%;
+        height: 40px;
+        justify-content:center;
+    }
+    .nav-right{
+        display:flex;
+        width: 100%;
+        justify-content: center;
+    }
+    nav{
+        flex-direction: column;
+        font-size: 1.5rem;
+        display: flex;
+        list-style-type: none;
+        text-align: center;
+    }
+    .nav {
+        border-radius: 25px;
+    }
+    .container-1{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+    .left{
+        width: 80%;
+        margin: 0 auto;
+        align-items: center;
+    }
+   
+    .right{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    h2{
+        width: 100%;
+        margin-top: 2%;
+    }
+    .right p{
+        margin: 5% auto;
+    }
+    .button-1{
+        margin: 3% auto;
+    }
+    .about-main{
+        display: flex;
+        flex-flow: column;
+        /* width: 80%; */
+        text-align: center;
+        flex-wrap: wrap;
+    }
+    .about-people{
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        width: 98%;
+    }
+
+    .about-p-container{
+        width: 80%;
+        justify-content: center;
+    }
+    .about-img-container{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .about-img-container img{
+        width: 80%;
+    }
+    .fas{
+        visibility: hidden;
+    }
+
+}
+
+@media(max-width: 800px){
+    .container-1{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+    .left{
+        width: 80%;
+        margin: 0 auto;
+        align-items: center;
+    }
+   
+    .right{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .button-1{
+        margin-top: 5%;
+    }
+}
