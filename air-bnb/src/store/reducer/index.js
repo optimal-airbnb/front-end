@@ -1,6 +1,9 @@
 import {
   ADD_LISTING,
   ADD_LISTING_FAILED,
+  DELETE_LISTING_START,
+  DELETE_LISTING_SUCCESSFUL,
+  DELETE_LISTING_FAILED,
   OPTIMAL_PRICE,
   USER_REGISTER_START,
   USER_REGISTER_SUCCESS,
@@ -8,12 +11,12 @@ import {
   USER_LOGIN_START,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAIL,
+  NEW_USER,
 } from "../actions";
 
 export const initialState = {
   listings: [],
   price: "",
-  newUser: [],
   user: [],
   isLoading: false,
   error: "",
@@ -30,6 +33,19 @@ export const reducer = (state = initialState, action) => {
       return {
         error: action.payload,
       };
+    case DELETE_LISTING_START:
+      return {
+        isLoading: true,
+      };
+    case DELETE_LISTING_SUCCESSFUL:
+      return {
+        ...state,
+        listings: action.payload,
+      };
+    case DELETE_LISTING_FAILED:
+      return {
+        error: action.payload,
+      };
     case OPTIMAL_PRICE:
       return {
         price: action.payload,
@@ -41,7 +57,13 @@ export const reducer = (state = initialState, action) => {
     case USER_REGISTER_SUCCESS:
       return {
         ...state,
-        newUser: action.payload,
+        user: action.payload,
+        isLoading: false,
+      };
+    case NEW_USER:
+      return {
+        ...state,
+        user: action.payload,
         isLoading: false,
       };
     case USER_REGISTER_FAIL:
