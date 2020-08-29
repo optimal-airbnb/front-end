@@ -230,6 +230,7 @@ function ListingsForm(props) {
         <p>Days Available: {outputValues.Availability_365} </p>
 
         <p>Your optimal price is:</p>
+        <h3>{props.isLoading ? "Loading..." : null}</h3>
         <p style={{ color: "green", fontSize: "40px" }}>
           {props.price ? props.price["predicted_price "] : null}
         </p>

@@ -63,6 +63,10 @@ pre {
   margin: 10px;
 }
 
+.outputs h3 {
+  margin: 10px;
+}
+
 .delete {
   color: rgb(216, 87, 87);
   display: flex;

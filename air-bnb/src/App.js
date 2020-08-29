@@ -37,6 +37,7 @@ function App(props) {
                   addListing={props.addListing}
                   deleteListing={props.deleteListing}
                   price={props.price}
+                  isLoading={props.isLoading}
                 />
               </PrivateRoute>
             </div>
@@ -52,6 +53,7 @@ const mapStateToProps = (state) => {
     listings: state.listings,
     price: state.price,
     user: state.user,
+    isLoading: state.isLoading,
     error: state.error,
   };
 };
