@@ -62,3 +62,9 @@ pre {
 .outputs p {
   margin: 10px;
 }
+
+.delete {
+  color: rgb(216, 87, 87);
+  display: flex;
+  justify-content: flex-end;
+}

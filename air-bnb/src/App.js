@@ -1,6 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addListing, userRegister, userLogin } from "./store/actions";
+import {
+  addListing,
+  deleteListing,
+  userRegister,
+  userLogin,
+} from "./store/actions";
 import ListingsForm from "./components/ListingsForm";
 import Nav from "./components/Navbar";
 import SignUp from "./components/SignUp";
@@ -30,6 +35,7 @@ function App(props) {
               <PrivateRoute path="/listings">
                 <ListingsForm
                   addListing={props.addListing}
+                  deleteListing={props.deleteListing}
                   price={props.price}
                 />
               </PrivateRoute>
@@ -52,6 +58,7 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   addListing,
+  deleteListing,
   userRegister,
   userLogin,
 })(App);
