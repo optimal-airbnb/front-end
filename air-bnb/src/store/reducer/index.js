@@ -28,6 +28,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         listings: action.payload,
+        isLoading: true,
       };
     case ADD_LISTING_FAILED:
       return {
@@ -41,6 +42,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         listings: action.payload,
+        isLoading: false,
       };
     case DELETE_LISTING_FAILED:
       return {
@@ -49,6 +51,7 @@ export const reducer = (state = initialState, action) => {
     case OPTIMAL_PRICE:
       return {
         price: action.payload,
+        isLoading: false,
       };
     case USER_REGISTER_START:
       return {
